@@ -1,0 +1,18 @@
+<?php
+    class Lab extends  Controller
+	{
+		function __contruct()
+		{
+			parent :: Controller();
+		}
+		
+		function lab()
+		{
+			$data['title'] = "The Lab | Shutterbug Photo Mall";
+			$data['header'] = "shared/general_header.php";
+			$data['page'] = "lab/lab_view.php";
+			
+			$this->load->view('index.tpl.php', $data);
+		}
+	}
+?>

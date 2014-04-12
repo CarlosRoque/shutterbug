@@ -1,0 +1,217 @@
+
+/******** CONTENT ['blog_view'] ************/
+#blog_wrap{
+	background: #eee;
+	margin: 10px;
+}
+#blog_wrap h3{
+	float: left;
+	display: block;
+	color: #F9E2E2;
+}
+#blog_wrap h5{
+	float: right;
+	margin: 4px;
+	padding: 0;
+	font-style: italic;
+	font-weight: normal;
+	color: #ddd;
+}
+#blog_wrap .title_wrap{
+	width: 97%;
+	padding: 10px;
+	float: left;
+	background: #222;
+	min-height: 20px;
+}
+#blog_wrap .number_id{
+	float: left;
+	padding: 1px 10px;
+	min-height: 20px;
+	margin-right: 10px;
+	background: #222;
+	border-right: 1px dotted #ccc;
+}
+#blog_wrap .blog_post{
+	background: #e4e4e4;
+	padding: 15px;
+	margin: 0 5px;
+}
+#blog_wrap .right_top{
+	float: right;
+	margin-right: 20px;
+}
+#blog_wrap .comment_box{
+	margin: 0 5px;
+	padding: 15px;
+	background: #ddd;
+	border-top: 1px dashed #666;
+}
+#blog_wrap .entry_box{
+	margin: 10px 0;
+}
+
+/*-------- ADMIN PANEL ---------------*/
+#user_login li{
+	list-style: none;
+	padding: 5px;
+}
+#admin_wrap{
+	padding: 10px;
+}
+#admin_wrap h3{
+	color: #000;
+	padding: 10px 0;
+}
+#admin_wrap .panel_box li{
+	list-style: none;
+	margin: 5px;
+	padding: 5px;
+	background: #333;
+	width: 200px;
+}
+#admin_wrap .panel_box a{
+	border-bottom: 1px dotted #000;
+	color: #72C2FE;
+}
+#admin_wrap .admin_last{
+	border-bottom: 0;
+	list-style-image: none;
+}
+
+/*-------- ADMIN PANEL [useradd_box] -----*/
+.admin_lab label{
+	width: 100px;
+	display: block;
+	float: left;
+}
+.admin_label{
+	margin: 10px 0;
+}
+#addauser_box ul{
+	padding: 5px;
+	margin-top: 10px;
+	margin-left: 5px;
+	background: #333;
+	color: #e1e1e1;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+#addauser_box li{
+	list-style: none;
+	margin: 5px;
+	padding: 5px;
+}
+
+/*-------- ADMIN PANEL [entryadd_box] -----*/
+#addaentry_box ul{
+	padding: 5px;
+	margin-top: 10px;
+	margin-left: 5px;
+	background: #333;
+	color: #e1e1e1;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+#addaentry_box li{
+	list-style: none;
+	margin: 15px;
+	padding: 5px;
+}
+
+/*-------- ADMIN PANEL [comment_queue] -----*/
+#admin_wrap .comment_queue{
+	padding: 10px;
+	margin: 3px;
+	color: #ccc;
+}
+#admin_wrap .comment_queue a{
+	color: #72C2FE;
+}
+#admin_wrap .comment_queue h5{
+	padding: 0;
+	margin: 0;
+}
+#admin_wrap .queue_left{
+	display: block;
+	float: left;
+	padding: 15px;
+	width: 240px;
+}
+#admin_wrap .queue_right{
+	display: block;
+	float: left;
+	padding: 5px;
+	width: 150px;
+}
+#admin_wrap .queue_right a{
+	margin: 0px;
+	padding: 3px;
+	background: #09436F;
+	border: 1px solid #115487;
+}
+#admin_wrap .comment_head{
+	display: block;
+	background: #002B51;
+	margin: 2px 0;
+	padding: 4px;
+}
+#admin_wrap .comment_floats{
+	display: block;
+	background: #002B51;
+}
+
+
+/*----------- COMMENTS SECTION [comment_view.php] -------------*/
+.box_panel .title_wrap{
+	background: #333;
+	margin: 10px;
+	padding: 15px;
+	color: #ddd;
+}
+.box_panel .title_wrap h3{ float: left; color: #F9E2E2;}
+.box_panel .title_wrap h5{ float: right; }
+.com_wrap p{
+	margin: 0 10px;
+}
+#back_float{
+	float: right;
+}
+.comment_box{ margin: 15px 0; }
+.comment_box p.cpanel{
+	padding: 10px;
+	background: #000;
+	color: #eee;
+}
+.comment_box span{ 
+	position: absolute;
+	background: url('../images/blog/comment.gif') no-repeat top left;
+	margin-top: -20px;
+	height: 10px;
+	width: 100px;
+}
+span.num_comments{
+	position: relative;
+	background: 0;
+	width: 200px;
+	margin: 0 30px;
+}
+.comment_box h5{ float: left; margin: 20px; }
+.comment_box h5 em{ font-weight: normal; }
+.comment_box img{
+	float: left;
+	margin: 10px;
+}
+.admin h5{ color: #AB0505; }
+.admin p.cpanel span{ background: 0; }
+.admin p.cpanel{
+	background: #AB0505;
+}
+#add_comment input{
+	margin: 5px;
+	padding: 5px;
+}
+#add_comment textarea{
+	margin: 5px;
+	padding: 5px;
+}

@@ -1,0 +1,68 @@
+<html>
+	<?php include("blog_js.php"); ?>
+	<body>
+		<div class="container_12">
+			<div id="blog_wrap">
+			<div id="toppest">
+				<a href="http://www.eventphotomarket.com"><?=imageurl('epm_blog.png','',array('id' => 'logo', 'alt' => ''));?></a>
+				<p class="right_top">
+					<?
+						if(($this->session->userdata('logged') != true)){
+							echo anchor('blog/login', 'Admin Panel');
+						}
+						else{
+							$user = $this->session->userdata('name');
+							echo "Welcome Back $user. If this isn't you".anchor('blog/logout', 'click here to logout.');
+						}
+					?> ||
+					<?=anchor('blog', 'Blog Home');?>
+					<?
+						$type = $this->session->userdata('level');
+						if($type >= 5){
+							echo "|| ".anchor('admin/index/true', 'Admin Panel');
+						}
+					?>
+				</p>
+			</div>
+			<div class="clear"></div>
+			<?php
+				foreach($query->result() as $row):
+			?>
+			<div class='entry_box'>
+			<div class="number_id">
+				<h3><?=$row->id;?></h3>
+			</div>
+			<div class="title_wrap">	
+				<h3><?=$row->title?></h3>
+				<h5>
+					This has been posted by: <strong><?=$row->name?></strong> on 
+					<strong><?=date("F j, Y", strtotime($row->date))?></strong>
+					<?php
+					if($type == 10){
+					 echo anchor('admin/entry_delete/'.$row->id,'<img src="" />',array('id'=>'removeItem'));
+					}
+					?>
+				</h5>
+			</div>
+			<div class="clear"></div>
+			<div class="blog_post">
+				<?=$row->post?>
+				<div class="clear"></div>
+			</div>
+			</div>
+			<div class='comment_box'>
+				<?
+				echo anchor('blog/comment_view/'.$row->id, 'View/Add Comments');
+				if($type == 10){
+					echo "|| ".anchor('admin/entry_delete/'.$row->id, 'Delete Entry', array('class' => 'entrynum_delete'));
+				}
+				?>
+				<span id="num_comments" name="<?=$row->id;?>"></span>
+			</div>
+			<?php
+				endforeach; 
+			?>
+			</div>
+		</div>
+	</body>
+</html>

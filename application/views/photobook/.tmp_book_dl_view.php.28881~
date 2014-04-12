@@ -1,0 +1,32 @@
+<div class="content_wrap">	
+	<div class="grid_12">
+		<div class="book_head">
+			<?php echo img_asset('photobook_1.png', '', array('alt'=>'Photobook Creation')); ?>
+		</div>
+	</div>
+	
+	<!-- ****** Navigation Below Optional Picture ******* -->
+	<?php $this->load->view('photobook/shared/photo_tab.php'); ?>
+	
+	
+	<!-- ****** Start of Actual Content ****** -->
+	<div class="grid_12 grid_padding">
+		Share your best memories with family and friends by creating your own personal photobook 
+		with our easy to use software. We offer hardcover, softcover, and lay-flat books in many 
+		different kinds of sizes, so you are sure to find one that is just right for you! Create
+		a book, to fit your needs. <br/> ( ex. A gift, sports, portfolio, anniversaries, weddings, travel,
+		holidays, birthdays, etc. )
+	</div>
+	<div class="clear"></div>
+	<div class="grid_12 box_panel book_dload">
+		<div class="grid_5">
+			<h3>PC Download ></h3>
+			<a href="">Download</a>
+		</div>
+		<div class="grid_6">
+			<h3>Mac Download ></h3>
+			<a href="">Download</a>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>

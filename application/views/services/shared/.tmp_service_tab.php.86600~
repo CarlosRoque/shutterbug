@@ -1,0 +1,10 @@
+<div class="grid_12">
+	<div class="current_nav">
+		<ul>
+			<li class="service_index"><?php echo anchor('services/service_index','Find Your Photo'); ?></li>
+			<li class="used"><?php echo anchor('services/used','Used Equipment'); ?></li>
+			<li class="business"><?php echo anchor('services/business','Business Services'); ?></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+</div>

@@ -1,0 +1,26 @@
+<?php echo doctype(); ?>
+<html>
+	<head>
+		<title><?php echo $title; ?></title>
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+		
+		<?php echo css('grid/960.css'); ?>
+		<?php echo css('grid/reset.css'); ?>
+		<?php echo css('general.css'); ?>
+		
+		<?php echo js('cufon.js'); ?>
+		<?php echo js('Eurostile_400.font.js'); ?>
+		<?php echo js('jquery.innerfade.js'); ?>
+		<?php echo js('jquery.all.js'); ?>
+	</head>
+	
+	<body>
+		<div class="container_12">
+			<?php $this->load->view($header); ?>
+			<?php $this->load->view($page); ?>
+			<?php $this->load->view('shared/general_footer.php'); ?>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<?php
+class Blogs extends Model{
+	
+	function Blogs()
+	{
+		parent::Model();
+	}
+	
+	function get_last_ten()
+	{
+		$query = $this->db->get('blogs', 10);
+		
+		return $query;
+	}
+	
+	function get_blogs()
+	{
+		$query = $this->db->get('blogs');
+		
+		return $query;
+	}
+	
+	function get_current($id)
+	{
+		$query = $this->db->get_where('blogs', array('id' => $id));
+		
+		return $query;
+	}
+	
+	function insert($post)
+	{
+		$this->name = $this->session->userdata('name');
+		$this->title = $post['title'];
+		$this->post = $post['post'];
+		
+		$query = $this->db->insert('blogs', $this);
+	}
+	
+	function delete($cid)
+	{
+		$this->db->delete('blogs', array('id' => $cid));
+	}
+	
+}
+?>

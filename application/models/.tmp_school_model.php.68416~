@@ -1,0 +1,14 @@
+<?php
+    class School_model extends Model
+	{
+		function __contruct()
+		{
+			parent :: Model();
+		}
+		
+		function get_classes()
+		{
+			return $query = $this->db->get('classes');
+		}
+	}
+?>

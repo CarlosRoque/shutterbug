@@ -1,0 +1,23 @@
+<script type="text/javascript">
+	$(function(){
+		//--- deletes an entry ----
+		
+		 $(".entrynum_delete").click(function(e){
+		 	e.preventDefault();
+			
+			var link = $(this).attr('href');
+			var answer = confirm("Are you sure you want to delete this entry?");
+			
+			if(answer){
+				$.ajax({
+					url: link
+				});
+				
+				$(this).parent().prev().fadeOut();
+				$(this).parent().fadeOut();
+			}
+			
+		  });
+		 
+		});
+</script>

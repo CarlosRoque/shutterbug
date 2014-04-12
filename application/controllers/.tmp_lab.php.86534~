@@ -1,0 +1,51 @@
+<?php
+    class Lab extends Controller
+	{
+		function __contruct()
+		{
+			parent :: Controller();
+		}
+		
+		function lab_index()
+		{
+			$data['title'] = "The Lab | Shutterbug Photo Mall";
+			$data['header'] = "shared/general_header.php";
+			$data['page'] = "lab/lab_view.php";
+			
+			$this->load->view('index.tpl.php', $data);
+		}
+		
+		function products()
+		{
+			$data['title'] = "Products | The Lab | Shutterbug Photo Mall";
+			$data['header'] = "shared/general_header.php";
+			$data['page'] = "lab/product_view.php";
+			
+			$this->load->view('index.tpl.php', $data);
+		}
+		
+		function lab_pro()
+		{
+			$data['title'] = "Pro Customers | The Lab | Shutterbug Photo Mall";
+			$data['header'] = "shared/general_header.php";
+			$data['page'] = "lab/pro_view.php";
+			
+			$this->load->view('index.tpl.php', $data);
+		}
+		
+		function lab_catalog()
+		{
+			$data['title'] = "Pro Customers | The Lab | Shutterbug Photo Mall";
+			$data['header'] = "shared/general_header.php";
+			$data['page'] = "lab/catalog_view.php";
+			
+			$this->load->view('index.tpl.php', $data);
+		}
+		
+		function catalog_process()
+		{
+			//This Loads Any Model Needed (nothing for now)
+			
+		}
+	}
+?>

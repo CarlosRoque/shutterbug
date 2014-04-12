@@ -1,0 +1,28 @@
+<div class="content_wrap">
+	<?php $this->load->view('lab/shared/lab_tab.php'); ?>
+	<div class="grid_12">
+		<div align="center">
+			<?php echo img_asset('pro_cust.png'); ?>
+		</div>
+		<div class="box_panel">
+			<h3>All the Benefits of a Regular Customer</h3>
+			<p>
+				We give pro's the opportunity to work with all of the benefits our regular customers
+				get with Shutterbug Photo Mall. To view the opportunities we offer to all of customers 
+				please view our lab offers by <?php anchor('lab/lab_index','clicking here'); ?>. We also 
+				offer different kinds of software to our pro's. Check out our download section by 
+				<?php echo anchor('downloads/dl_index','going here'); ?>. We also offer a pro catalog 
+				for our pro customers. 
+			</p>
+		</div>
+		<div class="box_panel">
+			<h3>Interested in Becoming a Pro?</h3>
+			<p>
+				We want to give everyone the chance at showing off their abilities at being a pro. Anyone 
+				can become a pro. The things we look for in a person when someone wants this opportunity 
+				is that they have the ability or motivation to exceed others and to out learn others. 
+				If your interested in becoming a pro, email our Lab Representative Brandi. 
+			</p>
+		</div>
+	</div>
+</div>

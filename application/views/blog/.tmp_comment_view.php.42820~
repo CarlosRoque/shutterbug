@@ -1,0 +1,82 @@
+<div class="container_12">
+<div id="cmv_wrap">
+<?php
+echo anchor('blog/','Back To Blogs', array("id"=>"back_float"));
+$row = $blogs->row();
+?>
+<div class='entry_box'>
+<div class="title_wrap">	
+	<h3><?=$row->title?></h3>
+	<h5>This has been posted by: <strong><?=$row->name?></strong> on <strong><?=date("F j, Y", strtotime($row->date))?></strong></h5>
+</div>
+<div class="clear"></div>
+<p>
+	<?=$row->post?>
+	<div class="clear"></div>
+</p>
+</div>
+<hr>
+<h3 class="comment_h3">Comments</h3>
+<?php
+	if($comments->num_rows() > 0){
+		foreach($comments->result() as $rows):
+?>
+	<div class='comment_box <?=$rows->type?>'>
+		<img src="http://www.iconspedia.com/uploads/132850023.png" />
+		<h5><?=$rows->username?></h5>
+		<div class="clear"></div>
+		<p>
+			<?=$rows->comment?>
+		</p>
+		<p class="date_box">
+			<?=date("F j, Y", strtotime($rows->date))?> at <?=date("h:i A", strtotime($rows->date))?>
+		</p>
+	</div>
+<?php	
+		endforeach;}else{ ?> 
+	<div class='comment_box empty_comments'>
+		<p>
+			At the moment, no entries/comments have been approved or have been posted yet.
+			Interested in making a comment? To make a comment please fill the form out 
+			below and wait for it's approval.
+		</p>
+	</div>	
+	<?
+	} ?>
+
+<div id="add_comment">
+	<h3 class="comment_h3">Add An Entry</h3>
+			<?
+				// form for adding entries
+				echo form_open("blog/comment_add/$row->id");
+				if(isset($this->session->userdata['logged'])){
+					
+					if($this->session->userdata('level') >= 5){
+						$comment_type = "admin";
+					}
+					else{ $comment_type = "user"; }
+					
+					$list = array(
+							"Comment Here ".$this->session->userdata('name'),
+							form_hidden('username', $this->session->userdata('name')),
+							form_hidden('blog_id', $row->id),
+							form_hidden('type', $comment_type),
+							form_textarea(array('name' => 'comments')),
+							form_submit('entry_submit', 'Add Comment')
+					);
+				}
+				else{
+					$list = array(
+							form_label("Name: ", "username").form_input(array('name' => 'username')),
+							form_hidden('blog_id', $row->id),
+							form_label("Entry: ", "comments"),
+							form_textarea(array('name' => 'comments')),
+							form_submit('entry_submit', 'Add Comment')
+					);
+				}
+				echo ul($list, array('id'=>'entry_add'));
+				echo form_close();
+			?>
+</div>
+</div><!-- End Wrap -->
+</div><!-- End Container -->

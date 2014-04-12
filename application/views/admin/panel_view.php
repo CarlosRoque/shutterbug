@@ -1,0 +1,127 @@
+<?php $user = $this->session->userdata('user_info'); ?>
+<?php $queue = $this->Comments->get_queue(); ?>
+<div class="content_wrap admin_wrap">
+	<div class="clear"></div>
+	<div class="box_panel admin_head">
+		<h3>Welcome Back <?php echo $user['user']; ?></h3>
+		<p><strong>Last Logged In: <?php echo date("F j, Y", strtotime($user['last_log'])); ?></strong> | <?php echo anchor('admin/logout','Logout'); ?></p>
+		<div class="clear"></div>
+	</div>
+	
+	<div class="box_panel admin_box">
+		
+		<!-- ******** CLASS MANAGEMENT OPTIONS ******* -->
+		<?php if($user['type'] == 1){ ?>
+		<div class="admin_manage">
+			<h3>General Management Settings</h3>
+			<ul>
+				<li><?php echo anchor('#','Manage Users'); ?></li>
+				<li><?php echo anchor('#','Manage Classes', array('id' => 'admin_classes')); ?></li>
+				<li><?php echo anchor('#','Change Password', array('id' => 'admin_password')); ?></li>
+			</ul>
+		</div>
+		<?php } ?>
+		<!-- ******** BLOG MANAGEMENT OPTIONS ******* -->
+		<h3>Blog Management Settings</h3>
+		<ul>
+			<li><?php echo anchor('admin/manage_blog','Add / Remove Blog Entry'); ?></li>
+			<li><?php echo anchor('admin/manage_comments','Approve Comments'); ?> (Comments to Approve: <?php echo $queue->num_rows; ?>)</li>
+		</ul>
+	</div>
+	
+	<div class="box_panel admin_panel">
+		<div class="admin_default a_show">
+			<strong>Choose An Option From The Links Above</strong>
+		</div>
+		<div class="admin_classes">	
+			<!-- ******** CLASSES VIEW FOR ERIN ******* -->		
+			<table>
+			<h3>Class Management</h3>
+			<?php foreach($classes->result() as $row): ?>
+				<tr>
+					<th><?php echo $row->C_Name; ?></th>
+					<td><?php echo $row->C_Date; ?></td>
+					<td class="alt"><?php echo $row->C_Time; ?></td>
+					<td><?php echo $row->C_Price; ?></td>
+					<td class="alt"><?php echo $row->C_Desc; ?></td>
+					<td class="modify_class">
+						<?php echo anchor('admin/edit_class', img_asset('admin/edit.png'), array('class'=>'edit_class')); ?>
+						<?php echo anchor("admin/remove_class/$row->C_ID", img_asset('admin/remove.png'), array('class'=>'remove_class')); ?>
+					</td>
+				</tr>
+			<?php endforeach; ?>
+			</table>
+			<ul>
+				<li class="add_class">
+					<?php echo anchor('#','Add A Class'.img_asset('admin/29.png')); ?>
+				</li>
+			</ul>
+			
+			<!-- ******** FORM FOR ADDING CLASSES ******* -->
+			
+			<table class="class_form">
+				<?php echo form_open('admin/add_class'); ?>
+				<tr>
+					<th class="firstalt">Name</th>
+					<th class="firstalt">Class Date</th>
+					<th class="firstalt">Class Time</th>
+					<th class="firstalt">Class Price</th>
+					<th class="firstalt">Class Description</th>
+				</tr>
+				<tr>
+					<td><?php echo form_input('C_Name'); ?></td>
+					<td><?php echo form_input('C_Date'); ?></td>
+					<td><?php echo form_input('C_Time'); ?></td>
+					<td><?php echo form_input('C_Price'); ?></td>
+					<td><?php echo form_input('C_Desc'); ?></td>
+				</tr>
+				<tr>
+					<td colspan='5'><?php echo form_submit('cSubmit','Add Class'); ?></td>
+				</tr>
+				<?php echo form_close(); ?>
+			</table>
+		</div>
+		
+		<!-- ******** FORM FOR CHANGING PASSWORD ******* -->
+		<div class="admin_password">
+			This feature will be added soon!
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function(){
+		
+		// this hides all the admin_panel divs
+		$(".admin_panel div").hide();
+		$(".admin_panel .a_show").show();
+		$(".class_form").hide();
+		
+		// onClick of a link a panel shows
+		$(".admin_manage a").click(function(e){
+			e.preventDefault();
+			$(".admin_panel div").hide();
+			
+			// what panel to show
+			link = $(this).attr('id');
+			
+			// goes through panels and show's the correct one.
+			$('.admin_panel div').each(function(){
+
+				if($(this).attr('class') == link)
+				{
+					$(this).show();
+				}
+				
+			});
+		});
+		
+		// This Will Allow You To Add A Class
+		$(".add_class a").click(function(e){
+			e.preventDefault();
+			
+			$(".class_form").fadeIn();
+		})
+		
+	});
+</script>

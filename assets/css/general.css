@@ -1,0 +1,388 @@
+
+@import url('admin.css');
+@import url('blog.css');
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 1.3em;
+}
+a{
+	color: #ff0000;
+	text-decoration: none;
+}
+h1{
+	font-size: 1.8em;
+}
+h3{
+	color: #B40404;
+	font-size: 1.4em;
+	font-weight: normal;
+}
+p{
+	font-size: .85em;
+}
+.grid_padding {
+    position: relative;
+    padding: 10px;
+    margin: 5px;
+}
+.box_border{
+	position: relative;
+	margin: 5px;
+	padding: 0px;
+	border: 1px solid #ddd;
+}
+.box_panel{
+	position: relative;
+	margin: 5px;
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+
+/***** HEADER STUFF ******/
+.main_nav a{
+	color: #666;
+	text-decoration: none;
+}
+.main_nav li{
+	position: relative;
+	float: left;
+	padding: 10px 15px;
+	border-right: 1px solid #ddd;
+	z-index: 3000;
+}
+.top_menu li:hover{ background: #ccc; }
+ul.subnav{
+	position: absolute;
+	display: none;
+	height: auto;
+	width: auto;
+	margin-top: 10px;
+	margin-left: -15px;
+	padding: 5px;
+	background: url('../images/menu_bg.png');
+	border: 1px solid #ddd;
+	white-space: nowrap;
+	z-index: 1000;
+	-moz-box-shadow: 2px 2px 3px #444;
+}
+.subnav li{
+	display: block;
+	float: none;
+	margin: 0px;
+	border-right: 0px solid #ddd;
+	border-left: 3px solid #ff0000;
+}
+.subnav li a{
+	margin: 0;
+	padding: 10px;
+}
+.subnav li:hover{ background: #333; }
+.subnav li:hover a{ color: #fff; }
+.top_menu .nav_last{
+	border-right: 0px;
+	padding-right: 20px;
+}
+
+/******* CONTENT ['index'] *********/
+.imagefade{
+	padding: 0 8px;
+}
+.imagefade img{
+	width: 925px;
+}
+.news_head{
+	float: left;
+	margin-left: 100px;
+}
+.news_head img{
+	position: absolute;
+	margin-top: -25px;
+	left: 15px;
+}
+.news_fade{
+	margin-left: 20px;
+	margin-top: 2px;
+	width: 600px;
+	float: left;
+}
+.home_box p{
+	margin: 0 5px;
+	padding: 5px;
+}
+.home_box h3{
+	padding: 6px 3px;
+}
+div.vote{
+	padding: 5px 10px;
+}
+div.vote a{
+	margin: 3px 5px;
+	padding: 5px 10px;
+	background: #666;
+	color: #fff;
+}
+div.vote a.left:hover{
+	border-left: 4px solid #01DF74;
+}
+div.vote a.right:hover{
+	border-left: 4px solid #ff0000;
+}
+div.poll_msg{
+	padding: 5px;
+	background: #333;
+	color: #fff;
+}
+div.poll_msg a{
+	color: #BAF350;
+	background: transparent;
+	margin: 0px;
+	padding: 0px;
+}
+
+/****** CONTENT ['lab'] ******/
+.current_nav{
+	text-align: center;
+	margin-left: 15px;
+}
+.current_nav ul{
+	margin: 15px 20px;
+}
+.current_nav li{
+	display: block;
+	float: left;
+	width: 210px;
+	height: 80px;
+	background: url('../images/lab_about_menu.png') no-repeat;
+}
+li.sub_active, .current_nav li:hover{ background: url('../images/lab_about_hover.png') no-repeat; }
+.current_nav a{
+	position: relative;
+	top: 30px;
+	padding: 10px;
+	margin:  4px;
+	color: #ddd;
+}
+.lab_i img{
+	width: 361px;
+}
+#form_address label{
+	display: block;
+	float: left;
+	margin: 0 10px;
+	width: 350px;
+	text-align: right;
+}
+#form_questions label{
+	display: block;
+	float: left;
+	margin: 0 10px;
+	width: 350px;
+	text-align: right;
+}
+.cat_form{
+	text-align: center;
+}
+.cat_form li{
+	margin: 5px;
+	padding: 5px;
+	background: #ddd;
+}
+.cat_form input{
+	padding: 5px;
+}
+
+/****** CONTENT ['school'] ******/
+.school_box h3{
+	margin: 10px 3px;
+}
+.school_box h5{
+	width: 90px;
+	margin: 10px 5px;
+	padding: 5px 20px;
+	background: #333;
+	color: #fff;
+}
+.school_box li strong{
+	position: relative;
+	display: block;
+	float: left;
+	width: 80px;
+}
+.school_box li{
+	margin: 2px 10px;
+	padding: 5px;
+	background: #ddd;
+}
+.school_box p{
+	margin: 10px 20px;
+}
+
+/****** CONTENT ['services'] ******/
+.service_wrap img{
+	margin: 10px;
+}
+.service_wrap p{
+	margin: 10px 0;
+}
+.business_box h3{
+	margin: 10px 3px;
+}
+
+/****** CONTENT ['services'] ******/
+.book_head img{
+	width: 80%;
+	margin-left: 70px;
+}
+.cal_head img{
+	height: 70%;
+	margin-left: 160px;
+}
+.book_dload h3{
+	float: left;
+	margin: 20px 50px 20px 10px;
+}
+.book_dload a{
+	float: left;
+	margin: 10px;
+	padding: 10px 15px;
+	background: #333;
+	border: 2px solid #666;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #ddd;
+}
+.book_dload a:hover{
+	background: #000;
+}
+
+/********* Pricing Tables in Photobooks ***************/
+#prices_table{
+	margin: 30px 0px;
+}
+#price {
+	width: 700px;
+	padding: 0;
+	margin: 0;
+}
+caption {
+	padding: 0 0 5px 0;
+	width: 700px;	 
+	font: italic 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	text-align: right;
+}
+th {
+	font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #CCCCCC;
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 6px 6px 6px 12px;
+	background: #9F0004;
+}
+th.nobg {
+	border-top: 0;
+	border-left: 0;
+	border-right: 1px solid #C1DAD7;
+	background: none;
+}
+td {
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	background: #fff;
+	padding: 6px 6px 6px 12px;
+	color: #4f6b72;
+	font: 12px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+td.alt {
+	background: #FFDDDD;
+	color: #333333;
+}
+th.firstalt {
+	border-left: 1px solid #C1DAD7;
+	border-top: 0;
+	background: #fff url(images/bullet1.gif) no-repeat;
+	font: bold 12px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	text-align: center;
+	color: #4f6b72;
+}
+th.specalt {
+	border-left: 1px solid #C1DAD7;
+	border-top: 0;
+	background: #f5fafa url(images/bullet2.gif) no-repeat;
+	font: bold 12px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #797268;
+	text-align: center;
+}
+#price td:hover{
+	background: #313131;
+	color: #CCCCCC;
+}
+
+/****** CONTENT ['downloads'] ******/
+.dl_head{
+	margin: 10px 20px;
+}
+.dl_head h3{
+	margin: 20px 0px;
+}
+.dl_box li{
+	float: left;
+	width: 270px;
+	padding: 10px 20px;
+	border-right: 1px dashed #bbb;
+}
+li.dl_last{
+	border-right: 0;
+}
+.dl_box p{
+	margin: 20px 0px;
+}
+.pro_click{
+	margin: 30px 0;
+	color: #000;
+}
+strong.pbook{
+	color: #222;
+}
+
+/****** CONTENT ['about'] ******/
+.co_show ul{
+	margin: 20px 0;
+}
+.contact_box{
+	margin: 10px;
+}
+.contact_box ul{
+	float: left;
+	margin: 20px;
+}
+.contact_box li{
+	border-bottom:1px dashed #CCCCCC;
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	padding:5px;
+	width:300px;
+}
+.car_box p{
+	margin: 10px;
+}
+
+/****** FOOTER STYLES ********/
+.footer_wrap{
+	font-size: .85em;
+	font-weight: bold;
+	padding: 10px;
+	color: #fff;
+	background: #222;
+	border-top: 4px solid #B40404;
+}
+.footer_wrap p{
+	font-size: 1em;
+}

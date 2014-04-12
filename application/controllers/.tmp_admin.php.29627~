@@ -1,0 +1,106 @@
+<?php
+    class Admin extends Controller
+	{
+		function __construct()
+		{
+			parent :: Controller();
+			
+			$this->output->enable_profiler(true);
+		}
+		
+		function index()
+		{
+			redirect('admin/login');
+		}
+		
+		function login()
+		{
+			$data['title'] = "Administrative Panel Login | Shutterbug Photo Mall";
+			$data['header'] = "shared/general_header.php";
+			$data['page'] = "admin/login_view.php";
+			
+			$this->load->view('index.tpl.php', $data);
+		}
+		
+		function check_log()
+		{
+			// load the model needed
+			$this->load->model('Users');
+			
+			// run function to login and check credentials
+			$login = $this->Users->user_login($_POST);
+			
+			if($login == true)
+			{
+				redirect('admin/admin_panel');
+			}
+			else
+			{
+				$this->session->set_flashdata('login_fail','true');
+				redirect('admin/login');
+			}
+		}
+		
+		function admin_panel()
+		{
+			// load the models needed
+			$this->load->Model('School_model');
+			
+			// load data into page
+			$data['classes'] = $this->School_model->get_classes();
+			
+			$data['title'] = "Administrative Panel | Shutterbug Photo Mall";
+			$data['header'] = "shared/general_header.php";
+			$data['page'] = "admin/panel_view.php";
+			
+			if($this->session->userdata('user') == "true")
+			{
+				$this->load->view('index.tpl.php', $data);
+			}
+			else{
+				redirect('admin/');
+			}
+		}
+		
+		function edit_class()
+		{
+			// This Feature Will Be Added In the Future!
+		}
+		
+		function remove_class($cid)
+		{
+			// load the models needed
+			$this->load->Model('School_model');
+			
+			// load data into page
+			if($this->session->userdata('user') == "true")
+			{
+				if($this->School_model->cancel_class($cid))
+				{
+					redirect('admin/admin_panel');			
+				}
+			}
+		}
+		
+		function add_class()
+		{
+			// load the models needed
+			$this->load->Model('School_model');
+			
+			// load data into page
+			if($this->session->userdata('user') == "true")
+			{
+				if($this->School_model->add_class($_POST))
+				{
+					redirect('admin/admin_panel');					
+				}
+			}
+		}
+		
+		function logout()
+		{
+			$this->session->sess_destroy();
+			redirect('admin/');
+		}
+	}
+?>

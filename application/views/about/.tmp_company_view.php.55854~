@@ -1,0 +1,40 @@
+<div class="content_wrap about_wrap">	
+	<?php $this->load->view('about/shared/about_tab.php'); ?>
+	
+	<div class="grid_12 co_show">
+		<ul class="imagefade">
+			<li><?php echo img_asset('about/header2.png'); ?></li>
+			<li><?php echo img_asset('about/header3.png'); ?></li>
+			<li><?php echo img_asset('about/header4.png'); ?></li>
+			<div class="clear"></div>
+		</ul>
+	</div>
+	
+	<div class="grid_12 box_panel">
+		In June of 2006 Jim & Maira Roshan acquired Shutterbug Digital Photo (a regional pro lab) 
+		and Downing's Picture Perfect (a local consumer lab) and merged them into one new national 
+		level lab named Shutterbug Photo Lab under the Shutterbug Photo Mall umbrella. Shutterbug 
+		Photo Mall, based in Bowling Green, Ky. is a pro level photographic resource center with a 
+		portrait and commercial studio along with the area's only 30 minute photo consumer lab and 
+		full service pro level photo finishing lab. Along with a locally based school Shutterbug 
+		educates consumer and pro level cliental along with EventPhotoMarket.com's professional clients 
+		that come in from all over the world.
+		<?php echo br(2); ?>
+		Since 1986, Shutterbug Photo Mall has provided the photographic expertise for professional 
+		and amateur photographers, by staying on the cutting edge of our industry.
+		Our talented team of photographers and designers are the top in the business at creating 
+		customized solutions to fit all your photography needs.
+
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function(){
+			$(".imagefade").innerfade({ 
+				speed: 1000, 
+				timeout: 10000, 
+				type: 'sequence',
+				containerheight: '345px'
+			});
+	});
+</script>

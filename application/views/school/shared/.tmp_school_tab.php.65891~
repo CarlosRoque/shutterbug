@@ -1,0 +1,10 @@
+<div class="grid_12">
+	<div class="lab_nav">
+		<ul>
+			<li><?php echo anchor('school/schedule','Schedule'); ?></li>
+			<li><?php echo anchor('school/information','Information'); ?></li>
+			<li><?php echo anchor('school/class_info','Class Info'); ?></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+</div> 	

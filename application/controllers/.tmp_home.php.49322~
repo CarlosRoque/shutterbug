@@ -1,0 +1,23 @@
+<?php
+	class Home extends Controller
+	{
+		function __construct()
+		{
+			parent :: controller();
+		}
+		
+		function index()
+		{
+			$data['title'] = "Welcome to Shutterbug Photo Mall";
+			$data['header'] = "shared/general_header.php";
+			$data['page'] = "home/index_view.php";
+			
+			$this->load->view('index.tpl.php', $data);
+		}
+		
+		function poll()
+		{
+			
+		}
+	}
+?>

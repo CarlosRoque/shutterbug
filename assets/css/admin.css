@@ -1,0 +1,90 @@
+	
+	
+	.admin_wrap{
+		margin: 10px;
+	}
+	
+	.admin_wrap h3{
+		margin: 10px 0;
+	}
+	
+	.admin_wrap li{
+		margin: 10px;
+	}
+	
+	.admin_wrap label{
+		display: block;
+		width: 100px;
+	}
+	
+	.admin_wrap input{
+		padding: 5px;
+		margin: 5px;
+	}
+	
+	/******** Content['panel'] *********/
+	.admin_head h3{
+		float: left;
+	}
+	
+	.admin_head p{
+		float: right;
+		margin: 10px 10px 0 0;
+	}
+	
+	.admin_box h3{
+		padding: 10px;
+		background: #333;
+		color: #fff;
+	}
+	
+	.admin_box li{
+		margin: 0;
+		padding: 10px;
+		border-bottom: 1px dashed #ccc;
+	}
+	
+	.admin_box li:hover{
+		background: #dedede;
+	}
+	
+	.admin_box a{
+		padding: 10px;
+	}
+	
+	.add_class a{
+		padding: 5px 10px;
+		background: #ddd;
+		border: 2px solid #999;
+	}
+	
+	.add_class a img{
+		position: relative;
+		top: 7px;
+		padding: 5px;
+	}
+	
+	/********** BLOG MANAGEMENT CSS ***************/
+	.entry_panel h3{
+		padding: 10px;
+		background: #222;
+		color: #E97F7D;
+	}
+	
+	.entry_panel label{
+		display: block;
+		float: left;
+		width: 100px;
+		margin: 10px;
+		font-weight: bold;
+	}
+	
+	.jHtmlArea{
+		width: 730px;
+		border: 1px solid #999;
+		margin: 10px;
+	}
+	
+	.markitup{
+		border: 1px solid #ddd;
+	}
